@@ -35,3 +35,6 @@ SELECT enrollment_num, scienceMarks FROM scienceClass;
 -- to get distinct items from a column which may have repeated values, we use DISTINCT keyword as shown:-
 SELECT DISTINCT scienceMarks FROM scienceClass;
 
+-- adding 2 more reecords
+INSERT INTO scienceClass VALUES (14,'titu',89),(15,'chandu',75);
+
