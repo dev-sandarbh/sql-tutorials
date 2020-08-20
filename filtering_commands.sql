@@ -52,11 +52,3 @@ SELECT * FROM scienceClass WHERE studName NOT LIKE 'ano%';
 
 -- if we actually need to find out the % symbol, then we use \ as shown
 SELECT * FROM scienceClass WHERE studName LIKE 't\%';  -- it gives no record as no name has a % symbol in it
-
-
-
-
-
-
-
-
