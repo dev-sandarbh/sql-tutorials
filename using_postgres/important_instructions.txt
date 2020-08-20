@@ -1,0 +1,23 @@
+From now on, i'm going to use PostgreSql Databse with pgAdmin
+You can download it from here:
+	https://www.postgresql.org/download/ 
+
+Just copy and paste this url in your browser's address bar and download the required software as per your system.
+
+After that i've given  3 CSV(.csv) files to import data from and get your Database up and running....
+
+Steps to import csv data into your database:-
+1) Create a new database in your pgAdmin and give it any name of your choice. 
+2) Open Query Tool in your pgAdmin and write the following code
+
+'''
+	COPY CustomerInfo(cust_id, cust_name, cust_segment, cust_age, cust_country,
+				 cust_city, cust_state, cust_postal_code, cust_region) 
+	FROM 'C:\Program Files\PostgreSQL\11\data\copy_from_here\Customer.csv'
+	DELIMITER ',' CSV HEADER; 
+'''
+
+But remember that this code will work once you create the tablename, column names and datatypes of the columns same....
+Specifiy path correctly....
+
+3) Repeat same procedure for other two .csv files as well in order to get their data as well!!
