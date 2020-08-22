@@ -33,3 +33,29 @@ FROM sales_details_2015 AS a
 LEFT JOIN customer_20_60 AS b
 ON a.customer_id=b.cust_id
 ORDER BY customer_id;   --> CUST_ID=103115 IS PRESENT HERE WHICH WAS ABSENT IN THE INNER JOIN
+
+-- THIRD IS RIGHT JOIN -->> RIGTH JOIN returns all rows from the right table,
+                         -- even if there are no matches in the left table.
+--EXAMPLE:
+SELECT a.order_line, a.product_id, a.customer_id, a.sales_amt, b.cust_name, b.cust_age 
+FROM sales_details_2015 AS a 
+RIGHT JOIN customer_20_60 AS b
+ON a.customer_id=b.cust_id
+ORDER BY customer_id;
+
+-- FOURTH IS FULL OUTER JOIN -->> IT COMBINES THE RESULT OF BOTH THE RIGHT AND LEFT OUTER JOINS
+-- EXAMPLE: 
+SELECT a.order_line, a.product_id, a.customer_id, a.sales_amt, b.cust_name, b.cust_age, B.cust_id 
+FROM sales_details_2015 AS a 
+FULL JOIN customer_20_60 AS b
+ON a.customer_id=b.cust_id
+ORDER BY a.customer_id,b.cust_id;
+
+
+
+
+
+
+
+
+
