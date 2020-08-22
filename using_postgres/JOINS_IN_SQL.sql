@@ -51,9 +51,28 @@ FULL JOIN customer_20_60 AS b
 ON a.customer_id=b.cust_id
 ORDER BY a.customer_id,b.cust_id;
 
+-- CROSS JOIN-->> returns the Cartesian product of the sets of records from the two or more joined tables.
+--                thus also called sometimes as CARTESIAN JOIN
+-- EXAMPLE:to understand this clearly, let us print the calendar
+-- for calendar we need months and years, so we will create tables for both months and years
+CREATE TABLE month_values(MM INT);
+CREATE TABLE year_values(YYYY INT);
 
+INSERT INTO month_values VALUES (1), (2), (3), (4), (5), (6), (7), (8), (9), (10), (11), (12);
+INSERT INTO year_values VALUES (2011), (2012), (2013), (2014), (2015), (2016), (2017), (2018), (2019), (2020);
 
+SELECT * FROM month_values;
+SELECT * FROM year_values;
 
+-- NOW CREATING THE CARTESIAN/CROSS JOIN ON THE MONTH AND YEAR TABLES TO GET A CALENDAR
+SELECT a.YYYY, b.MM 
+FROM year_values AS a, month_values AS b
+ORDER BY a.YYYY,b.MM;
+
+-- ############## EXCEPT COMMAND ###################
+/*EXCEPT STATEMENT-->> RETURNS THE ROWS FROM FIRST SELECT STATEMENT BUT NOT FROM THE SECOND SELECT STATEMENT
+*/
+-- EXAMPLE
 
 
 
